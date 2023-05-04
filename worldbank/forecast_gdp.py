@@ -79,7 +79,7 @@ class WorldBankForecaster:
         print_if_debug_enabled(df)
         return df
 
-    def concat_data(self, forecast_val, clean_df: pd.DataFrame) -> pd.DataFrame:
+    def concat_data(self, forecast_val, clean_df: pd.DataFrame):
         end_year = clean_df.index[-1].year
         forecast_years = list(range(end_year + 1, 2031))
         forecast_index = pd.date_range(start=f"{end_year + 1}-01-01", end=f"{end_year + 10}-01-01", freq='Y')
@@ -125,7 +125,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def print_if_debug_enabled(val: str):
+def print_if_debug_enabled(val):
     if debug_enabled:
         print(val)
 
